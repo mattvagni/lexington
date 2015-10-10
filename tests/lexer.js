@@ -3,21 +3,21 @@
 const Lexer = require('../src/lexer');
 const expect = require('expect.js');
 
-describe('Lexer', ()=>{
+describe('Lexer', () => {
 
-    it ('should keep state', ()=> {
+    it('should keep state', () => {
 
-        const l = new Lexer('1234', (stream, state)=>{
+        const l = new Lexer('1234', (stream, state) => {
 
-            if (stream.match('1')){
+            if (stream.match('1')) {
                 expect(state.test).to.not.be.ok();
             }
 
-            if (stream.match('2')){
+            if (stream.match('2')) {
                 state.test = true;
             }
 
-            if (stream.match('3') || stream.match('4')){
+            if (stream.match('3') || stream.match('4')) {
                 expect(state.test).to.equal(true);
             }
 
@@ -26,15 +26,15 @@ describe('Lexer', ()=>{
 
     });
 
-    it ('should save each token', ()=>{
+    it('should save each token', () => {
 
-        const l = new Lexer('aaa skip B d', (stream, state)=>{
+        const l = new Lexer('aaa skip B d', (stream, state) => {
 
-            if (stream.eat('a+')){
+            if (stream.eat('a+')) {
                 return ['A'];
             }
 
-            if (stream.eat('b', 'i')){
+            if (stream.eat('b', 'i')) {
                 return ['B'];
             }
 
@@ -64,5 +64,9 @@ describe('Lexer', ()=>{
         expect(tokens[9].endIndex).to.equal(11);
     });
 
+    it('should not make any tokens if passed an empty string', () => {
+        const l = new Lexer('', (stream, state) => { });
+        expect(l.getTokens().length).to.equal(0);
+    });
 
 });

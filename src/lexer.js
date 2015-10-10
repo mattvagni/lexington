@@ -5,13 +5,22 @@ const LexerToken = require('./lexer-token');
 
 class Lexer {
 
-    constructor(string, lexerFunction) {
-        this.tokens = [];
-
+    /**
+     * @param string The string to 'lex'
+     * @param lexerFunction The lexer function that defines how
+     *                      you would like the lexer to behave.
+     */
+    constructor (string, lexerFunction) {
         const stream = new LexerStream(string);
         const state = {};
 
         let hasNext = true;
+
+        this.tokens = [];
+
+        if (!string.length) {
+            return;
+        }
 
         while (hasNext) {
             const types = lexerFunction(stream, state) || [];
@@ -22,7 +31,10 @@ class Lexer {
         }
     }
 
-    getTokens(){
+    /**
+     * @returns {Array} An array of LexerTokens
+     */
+    getTokens () {
         return this.tokens;
     }
 }

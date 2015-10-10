@@ -1,16 +1,21 @@
 {
-  "name": "lexer",
+  "name": "lexington",
   "version": "1.0.0",
-  "description": "",
-  "main": "lexer.js",
+  "description": "A simple yet flexible lexer (or tokenizer).",
+  "main": "src/lexer.js",
   "scripts": {
-    "test": "mocha tests/ --reporter=spec"
+    "test": "mocha tests/",
+    "lint": "eslint --fix .",
+    "build": "browserify src/lexer.js -t babelify -t uglifyify --standalone Lexington > build/lexington.js"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "babel": "^5.8.23",
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "eslint": "^1.6.0",
     "expect.js": "^0.3.1",
-    "mocha": "^2.3.3"
-  }
+    "uglifyify": "^3.0.1"
+  },
+  "author": "Matt Vagni <mathiasvagni@googlemail.com>",
+  "license": "ISC"
 }
