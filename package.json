@@ -1,0 +1,16 @@
+{
+  "name": "lexer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lexer.js",
+  "scripts": {
+    "test": "mocha tests/ --reporter=spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.3.3"
+  }
+}
