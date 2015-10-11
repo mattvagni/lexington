@@ -79,7 +79,7 @@ Returns the text which is the current lexer functions 'scope' if you like.
 Given a regex _string_ i.e '[a-z]+' and any regex flags (like the [RegExp](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/RegExp) constructor) returns true or false if the next characters in the stream match.
 
 `stream.eat(regex, flags)`:
-The same as `stream.match()` but instead 'consumes' anything that matched meaning that if you  returns true or false if the next characters in the stream match.
+The same as `stream.match()` but instead 'consumes' anything that matched. See the example above for this to make sense.
 
 
 
