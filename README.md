@@ -49,7 +49,7 @@ Will output:
 ]
 ```
 
-## Docs:
+## Documentation
 
 To lex some text use you have to create a new instance of Lexington and then get the tokens back out.
 ```js
