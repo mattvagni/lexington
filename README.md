@@ -87,8 +87,8 @@ The same as `stream.match()` but instead 'consumes' anything that matched. See t
 If you would like to use this in the browser just use `/build/lexington.js`. You can use the module loader of your choice or can access it globally as `Lexington`.
 
 ## TODO
-- If the user defined lexer function doesn't return anything Lexington currently recurse's endlessly. Might be nice to add a check in here to throw an error instead.
-- If using regex character sets such as `/[\w]+/` in `stream.match()` or `stream.eat()` you have to escape the backslash by doing, for example, `stream.match('[\\w]+')`; This is due to how `RegExp()` works :poop:.
+- If the user defined lexer function doesn't return anything Lexington currently recurses endlessly. Might be nice to add a check in here and throw an error instead.
+- If you want to use regex character sets such as `/[\w]+/` in `stream.match()` or `stream.eat()` you have to escape the backslash by doing, for example, `stream.match('[\\w]+')`; This is due to how `RegExp()` works :poop:.
 
 
 
