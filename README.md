@@ -4,7 +4,9 @@ Lexington is a simple library to transform some text into a flat list of tokens.
 Works in node and in the browser.
 
 ## Installation
-`npm install lexington`
+```
+npm install lexington
+```
 
 ## Example Usage
 ```js
