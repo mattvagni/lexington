@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/mattvagni/lexington.svg?branch=master)](https://travis-ci.org/mattvagni/lexington) 
 # lexington
-Lexington is a simple library to transform some text into a flat list of tokens.
+Lexington is a simple library to transform some text into a flat list of tokens. 
+Works in node and in the browser.
 
 ## Installation
 `npm install lexington`
@@ -78,6 +79,10 @@ Given a regex _string_ i.e '[a-z]+' and any regex flags (like the [RegExp](https
 
 `stream.eat(regex, flags)`:
 The same as `stream.match()` but instead 'consumes' anything that matched. See the example above... kind of hard to explain.
+
+
+## In the browser
+If you would like to use this in the browser just use `/build/lexington.js`. You can use the module loader of your choice or can access it globally as `Lexington`.
 
 ## TODO
 - If the user defined lexer function doesn't return anything Lexington currently recurse's endlessly. Might be nice to add a check in here to throw an error instead.
