@@ -16,7 +16,7 @@ var lexer = new Lexington('Synergy lol wut hahahaa', (stream, state) => {
         return ['buzzword'];
     }
 
-    if (stream.eat('[ha]{2,}([^\w]|$)', 'i')){
+    if (stream.eat('[ha]{2,}([^\\w]|$)', 'i')){
         return ['laughter'];
     }
 
@@ -79,7 +79,9 @@ Given a regex _string_ i.e '[a-z]+' and any regex flags (like the [RegExp](https
 `stream.eat(regex, flags)`:
 The same as `stream.match()` but instead 'consumes' anything that matched. See the example above... kind of hard to explain.
 
-
+## TODO
+- If the user defined lexer function doesn't return anything Lexington currently recurse's endlessly. Might be nice to add a check in here to throw an error instead.
+- If using regex character sets such as `/[\w]+/` in `stream.match()` or `stream.eat()` you have to escape the backslash by doing, for example, `stream.match('[\\w]+')`; This is due to how `RegExp()` works :poop:.
 
 
 
