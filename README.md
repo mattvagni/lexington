@@ -51,11 +51,14 @@ Will output:
 
 ## Docs:
 
-To lex some text use you have to create a new instance of Lexington:
+To lex some text use you have to create a new instance of Lexington and then get the tokens back out.
 ```js
 var lexer = new Lexington('string to lex', function(stream, state){
     // Your code here.
 });
+
+// This will spit out your tokens:
+console.log(lexer.getTokens()); 
 ```
 The first argument is the text that you would like to lex.
 
@@ -79,7 +82,9 @@ Returns the text which is the current lexer functions 'scope' if you like.
 Given a regex _string_ i.e '[a-z]+' and any regex flags (like the [RegExp](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/RegExp) constructor) returns true or false if the next characters in the stream match.
 
 `stream.eat(regex, flags)`:
-The same as `stream.match()` but instead 'consumes' anything that matched. See the example above for this to make sense.
+The same as `stream.match()` but instead 'consumes' anything that matched. See the example above... kind of hard to explain.
+
+
 
 
 
