@@ -67,14 +67,9 @@ The second argument is the function that defines how you would like to lex some 
 
 Your lexer function will always called with `stream` and `state`.
 
-#### `state`
-
 The `state` argument is a simple object who's state is kept across function calls. For example if in a call of your lexer function you were to do: `state.foo = true` then the next call you would be able to access `state.foo`. This is very much inspired by the codemirror.
 
-#### `stream`
-
 The so called 'stream' has the following methods:
-
 `stream.current()`:
 Returns the text which is the current lexer functions 'scope' if you like.
 
